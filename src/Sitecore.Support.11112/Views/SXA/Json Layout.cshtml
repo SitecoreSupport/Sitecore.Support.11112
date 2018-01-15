@@ -8,7 +8,7 @@
 @if (@Sitecore.Context.PageMode.IsNormal || @Sitecore.Context.PageMode.IsPreview)
 {
     Response.ContentType = "application/json";
-    @Html.Sitecore().Placeholder("main")
+    @Html.Sitecore().Placeholder("json")
 }
 else
 {
@@ -31,7 +31,7 @@ else
     </head>
     <body>
     <div id="wrapper">
-        @Html.Sitecore().Placeholder("main")
+        @Html.Sitecore().Placeholder("json")
     </div>
 
     @foreach (string script in assetLinks.Scripts)

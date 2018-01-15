@@ -10,7 +10,7 @@ using Sitecore.XA.Foundation.SitecoreExtensions.Extensions;
 using Sitecore.Configuration;
 using Sitecore.Pipelines;
 using Sitecore.SecurityModel.License;
-using Sitecore.XA.Foundation.IoC;
+using Sitecore.DependencyInjection;
 using Sitecore.XA.Foundation.SitecoreExtensions.Comparers;
 using Sitecore.XA.Foundation.SitecoreExtensions.Repositories;
 using Sitecore.XA.Foundation.Theming.EventHandlers;
