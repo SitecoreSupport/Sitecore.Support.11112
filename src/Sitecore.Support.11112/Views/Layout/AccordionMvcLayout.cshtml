@@ -1,0 +1,62 @@
+﻿@using Sitecore.XA.Feature.Composites.Theming
+@using Sitecore.XA.Foundation.MarkupDecorator.Extensions
+@using Sitecore.XA.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.XA.Foundation.Theming.Bundler
+@using Sitecore.XA.Foundation.Grid.Extensions
+
+@{
+    AssetLinks assetLinks = Sitecore.Support.XA.Foundation.Theming.Bundler.AssetLinksGenerator.GenerateLinks(new CompositeThemesProvider());
+}
+
+<!DOCTYPE HTML>
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <style type="text/css">
+        .scChromeData {
+            display: none;
+        }
+    </style>
+    <title></title>
+    @foreach (string style in assetLinks.Styles)
+    {
+        @Html.Raw(style)
+    }
+</head>
+<body id="body" @Html.Sxa().Body().Decorate()>
+    <form id="form">
+        <div id="wrapper">
+            <div class="@Html.Sxa().GridPlaceholderClasses("main")">
+                <div class="row">
+                    <div class="component tabs">
+                        <div class="component-content">
+                            <ul class="accordionitems-heading">
+                                <li>
+                                    <a href='#'>
+                                        @Html.Sitecore().Placeholder("section-title")
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="accordionitems-container">
+                                <div class="tab">
+                                    @Html.Sitecore().Placeholder("section-content")
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    @{
+        foreach (string script in assetLinks.Scripts)
+        {
+            @Html.Raw(script)
+        }
+        if (!Sitecore.Context.PageMode.IsNormal)
+        {
+            <input type="hidden" id="hdPageMode" value="@(Sitecore.Context.PageMode.IsPreview ? "preview" : "edit")" />
+        }
+    }
+</body>
+</html>
