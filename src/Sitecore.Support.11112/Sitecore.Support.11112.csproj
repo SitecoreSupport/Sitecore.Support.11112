@@ -49,12 +49,15 @@
     <Reference Include="Sitecore.XA.Foundation.IoC, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Sitecore.XA.Foundation.IoC.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Sitecore.XA.Foundation.SitecoreExtensions">
       <HintPath>..\..\lib\Sitecore.XA.Foundation.SitecoreExtensions.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Sitecore.XA.Foundation.Theming">
       <HintPath>..\..\lib\Sitecore.XA.Foundation.Theming.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
